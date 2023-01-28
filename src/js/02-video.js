@@ -11,5 +11,14 @@ player.on(
   }, 1000)
 );
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+const STORAGE_KEY = "videoplayer-current-time";
+
+function updateTime() {
+const currentTime = localStorage.getItem(STORAGE_KEY);
+if (currentTime) {
+player.setCurrentTime(currentTime);
+};
+};
+updateTime();
+
 
